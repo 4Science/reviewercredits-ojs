@@ -330,6 +330,7 @@ class ReviewerCreditsPlugin extends GenericPlugin {
             }else{
                 if(!is_null($token)){
                     $headerAuth .= 'Authorization: Bearer '.$token;
+                    $headers[] = $headerAuth;
                 }
             }
             $ch      = curl_init();
