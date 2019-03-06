@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+  * plugins/generic/reviewerCredits/locale/en_US/locale.xml
+  *
+  * Copyright (c) 2015-2018 University of Pittsburgh
+  * Copyright (c) 2014-2018 Simon Fraser University
+  * Copyright (c) 2003-2018 John Willinsky
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  *
+  * ReviewerCredits plugin localization strings
+  -->
+
+<locale name="en_US" full_name="U.S. English">
+        <message key="plugins.generic.reviewerCredits.displayName">ReviewerCredits Plugin</message>
+        <message key="plugins.generic.reviewerCredits.description"><![CDATA[Plugin to enable the integration with ReviewerCredits.]]></message>
+        <message key="plugins.generic.reviewerCredits.manager.reviewerCreditsSettings">ReviewerCredits Settings</message>
+        <message key="plugins.generic.reviewerCredits.manager.settings.description">Configure the ReviewerCredits plugin for use in pushing new Peer Review Claims information into ReviewerCredits website.</message>
+        <message key="plugins.generic.reviewerCredits.manager.settings.reviewerCreditsJournalLogin">Journal user login</message>
+        <message key="plugins.generic.reviewerCredits.manager.settings.reviewerCreditsJournalPassword">Journal user password</message>
+        <message key="plugins.generic.reviewerCredits.manager.settings.rcLoginRequired">The Journal user login is required</message>
+        <message key="plugins.generic.reviewerCredits.manager.settings.rcPasswordRequired">The Journal user password is required</message>
+        <message key="plugins.generic.reviewerCredits.notification.success">Your Peer Review Claim has been succesfully sent to ReviewerCredits</message>
+        <message key="plugins.generic.reviewerCredits.notification.noUser">Reviewer account not found at ReviewerCredits using {$crMessage}.</message>
+        <message key="plugins.generic.reviewerCredits.notification.failed">The ReviewerCredits plugin has failed to send the Peer Review data to the ReviewerCredits website due to communication error</message>
+        <message key="plugins.generic.reviewerCredits.notification.failedAuth">The ReviewerCredits plugin has failed to send the Peer Review data to the ReviewerCredits website due to wrong Journal credentials</message>
+        <message key="plugins.generic.reviewerCredits.form.label">Send Peer Review claim to ReviewerCredits</message>
+        <message key="plugins.generic.reviewerCredits.form.consent">Yes, I agree to send my data (ORCID, email and Peer review data) to {$linkOpen}ReviewerCredits{$linkClose}. The data will be saved only if you have an active account.</message>
+</locale>
