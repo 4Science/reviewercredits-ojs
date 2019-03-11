@@ -20,7 +20,7 @@ Integration with ReviewerCredits via REST API. This plugin implements the follow
 ## Installation:
 
 ### Install from user interface:
- * Download the code from the repository and make a 'tag.gz' archive.
+ * Download the code from the repository and make a 'tar.gz' archive.
  * From the user interface page 'plugins' as administrator click on 'Upload A New Plugin'.
  
 NB: to use the installation from the user interface, the 'plugins' directory must be writeable from the webserver user.
