@@ -17,8 +17,15 @@ Contributed by 4Science (http://www.4science.it).
 Integration with ReviewerCredits via REST API. This plugin implements the following features:
  * Create and approve a Peer Review Claim on the ReviewerCredits website;
 
-## Install:
+## Installation:
 
+### Install from user interface:
+ * Download the code from the repository and make a 'tag.gz' archive.
+ * From the user interface page 'plugins' as administrator click on 'Upload A New Plugin'.
+ 
+NB: to use the installation from the user interface, the 'plugins' directory must be writeable from the webserver user.
+
+### Manual installation:
  * Copy the source into the PKP product's plugins/generic/reviewerCredits folder.
  * Run `tools/upgrade.php upgrade` to allow the system to recognize the new plugin.
  * Enable this plugin within the administration interface.
