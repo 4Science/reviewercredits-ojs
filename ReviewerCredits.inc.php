@@ -62,7 +62,13 @@ class ReviewerCreditsPlugin extends GenericPlugin {
          * @copydoc PKPPlugin::getTemplatePath
          */
         public function getTemplatePath($inCore = false) {
+            if(method_exists($this, 'getTemplateResourceName')){
+                //##--> OJS 3.1.1
                 return $this->getTemplateResourceName() . ':templates/';
+            }else{
+                //##--> OJS 3.1.2 onward
+                return ((!$inCore)?'../':'') . parent::getTemplatePath($inCore) . '/';
+            }
         }
         
         /**
@@ -222,7 +228,13 @@ class ReviewerCreditsPlugin extends GenericPlugin {
             $template    = $args[1];
             $request     = PKPApplication::getRequest();
             if($template == 'reviewer/review/step3.tpl'){
-                $templateMgr->register_outputfilter(Array($this, 'profileFilter'));
+                if(method_exists($templateMgr, 'register_outputfilter')){
+                    //##--> OJS 3.1.1
+                    $templateMgr->register_outputfilter(Array($this, 'profileFilter'));
+                }else{
+                    //##--> OJS 3.1.2 onward
+                    $templateMgr->registerFilter('output', Array($this, 'profileFilter'));
+                }
             }
             return FALSE;
         }
@@ -237,7 +249,7 @@ class ReviewerCreditsPlugin extends GenericPlugin {
             if(preg_match('|div.*formButtons|', $output) && $this->_consentFlag == TRUE){
                 if(!preg_match('|disabled|', $output)){
                     $this->_consentFlag = FALSE;
-                    $output = $templateMgr->fetch($this->getTemplatePath() . 'confirmRCEdit.tpl').$output;
+                    $output = $templateMgr->fetch($this->getTemplatePath() . 'confirmRCEdit.tpl') . $output;
                 }
             }
             return $output;

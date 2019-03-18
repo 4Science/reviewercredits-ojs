@@ -2,7 +2,7 @@
 
 **NOTE: Please ensure you're using the correct branch. Use the [master branch](https://github.com/4Science/reviewercredits-ojs/tree/master) for OJS 3.x**
 
-Plugin to enable the integration with ReviewerCredits (tested with OJS 3.1.1.4)
+Plugin to enable the integration with ReviewerCredits (tested with OJS 3.1.2.0)
 
 Copyright © 2015-2018 University of Pittsburgh
 <br />Copyright © 2014-2018 Simon Fraser University Library
