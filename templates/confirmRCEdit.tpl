@@ -11,11 +11,12 @@
  *}
  <div class="section">
     <span class="label">{translate key="plugins.generic.reviewerCredits.form.label"}</span>
+    <label class="description">{translate key="plugins.generic.reviewerCredits.form.label.description" linkOpen="<a href=\"https://www.reviewercredits.com\" target=\"_blank\">" linkClose="</a>" linkSignUpOpen="<a href=\"https://www.reviewercredits.com\signup\" target=\"_blank\">" linkSignUpClose="</a>"}</label>
     <ul class="checkbox_and_radiobutton">
         <li>
             <label>
                 <input type="checkbox" id="confirmSendRC" value="1" name="confirmSendRC" class="field checkbox" aria-required="true">
-                        {translate key="plugins.generic.reviewerCredits.form.consent"  linkOpen="<a href=\"https://www.reviewercredits.com\" target=\"_blank\">" linkClose="</a>"}
+                        {translate key="plugins.generic.reviewerCredits.form.consent"}
             </label>
         </li>
     </ul>

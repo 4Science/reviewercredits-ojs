@@ -185,7 +185,8 @@ class ReviewerCreditsPlugin extends GenericPlugin {
                             //##--> if dateCompleted is empty the submission is a new submission
                             if(empty($claimPayload->dateCompleted)){
                                 $claimPayload->dateCompleted = date('Y/m/d');
-                                $claimPayload->manuscriptID  = 'PR'.$reviewerSubmission->getReviewId().'-R'.$reviewerSubmission->getRound();
+                                $reviewAssignment = $args[0]->getReviewAssignment();
+                                $claimPayload->manuscriptID  = 'PR'.$reviewerSubmission->getReviewId().'-S'.$reviewAssignment->getSubmissionId().'-R'.$reviewerSubmission->getRound();
                                 //##--> Not used
                                 // $claimPayload->editorName    = '';
                                 $dateTime = DateTime::createFromFormat('Y-m-d H:i:s', $reviewerSubmission->getDateDue());
@@ -254,7 +255,7 @@ class ReviewerCreditsPlugin extends GenericPlugin {
             }
             return $output;
         }
-
+        
         /**
          * This method call the ReviewerCredits API to obtain an authorization token
          */

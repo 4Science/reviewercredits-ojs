@@ -38,7 +38,7 @@ class ReviewerCreditsSettingsForm extends Form {
 
                 $this->addCheck(new FormValidator($this, 'reviewerCreditsJournalLogin', 'required', 'plugins.generic.reviewerCredits.manager.settings.rcLoginRequired'));
                 $this->addCheck(new FormValidator($this, 'reviewerCreditsJournalPassword', 'required', 'plugins.generic.reviewerCredits.manager.settings.rcPasswordRequired'));
-
+                
                 $this->addCheck(new FormValidatorPost($this));
                 $this->addCheck(new FormValidatorCSRF($this));
         }
