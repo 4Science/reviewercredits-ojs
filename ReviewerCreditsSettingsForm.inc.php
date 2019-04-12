@@ -39,6 +39,13 @@ class ReviewerCreditsSettingsForm extends Form {
                 $this->addCheck(new FormValidator($this, 'reviewerCreditsJournalLogin', 'required', 'plugins.generic.reviewerCredits.manager.settings.rcLoginRequired'));
                 $this->addCheck(new FormValidator($this, 'reviewerCreditsJournalPassword', 'required', 'plugins.generic.reviewerCredits.manager.settings.rcPasswordRequired'));
                 
+                $this->addCheck(new FormValidatorCustom(
+                    $this, 'reviewerCreditsJournalLogin',
+                    'required',
+                    'plugins.generic.reviewerCredits.manager.settings.invalid',
+                    Array($this, 'customValidator')
+                ));
+                
                 $this->addCheck(new FormValidatorPost($this));
                 $this->addCheck(new FormValidatorCSRF($this));
         }
@@ -83,5 +90,19 @@ class ReviewerCreditsSettingsForm extends Form {
 
                 $plugin->updateSetting($contextId, 'reviewerCreditsJournalLogin', $this->getData('reviewerCreditsJournalLogin'), 'string');
                 $plugin->updateSetting($contextId, 'reviewerCreditsJournalPassword', $this->getData('reviewerCreditsJournalPassword'), 'string');
+        }
+        
+        /**
+         * Check credentials.
+         */
+        function customValidator($args){
+                $username = trim($args);
+                $password = $this->getData('reviewerCreditsJournalPassword');
+                if(empty($username) || empty($password)){
+                    $output = FALSE;
+                }else{
+                    $output = $this->plugin->verifyCredentials($username, $password);
+                }
+                return $output;
         }
 }

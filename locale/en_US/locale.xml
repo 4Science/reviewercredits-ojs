@@ -21,6 +21,7 @@
         <message key="plugins.generic.reviewerCredits.manager.settings.reviewerCreditsJournalPassword">Journal user password</message>
         <message key="plugins.generic.reviewerCredits.manager.settings.rcLoginRequired">The Journal user login is required</message>
         <message key="plugins.generic.reviewerCredits.manager.settings.rcPasswordRequired">The Journal user password is required</message>
+        <message key="plugins.generic.reviewerCredits.manager.settings.invalid">Invalid username or password. Check your account on www.reviewercredits.com.</message>
         <message key="plugins.generic.reviewerCredits.notification.success">Your peer review record has been successfully transmitted to ReviewerCredits, where it has been confirmed.</message>
         <message key="plugins.generic.reviewerCredits.notification.noUser">Your review record could not be transferred to ReviewerCredits because there is no valid account with the email "{$crMessage}". You can still claim your review, by registering to ReviewerCredits and uploading your review claim using the ms ID and the journal editor's email.</message>
         <message key="plugins.generic.reviewerCredits.notification.failed">The ReviewerCredits plugin has failed to send the Peer Review data to the ReviewerCredits website due to communication error</message>

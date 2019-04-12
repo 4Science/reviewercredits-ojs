@@ -257,6 +257,25 @@ class ReviewerCreditsPlugin extends GenericPlugin {
         }
         
         /**
+         * Output filter adds ReviewerCredits checkbox to reviewer submission form.
+         * @param $username string
+         * @param $password string
+         * @return bool
+         */
+        public function verifyCredentials($username, $password){
+            $authPayload = new stdClass();
+            $authPayload->username = $username;
+            $authPayload->password = $password;
+            $apiAuthToken = $this->_getToken($authPayload);
+            if(!$apiAuthToken->error){
+                $output = TRUE;
+            }else{
+                $output = FALSE;
+            }
+            return $output;
+        }
+        
+        /**
          * This method call the ReviewerCredits API to obtain an authorization token
          */
         protected function _getToken($authPayload) {
