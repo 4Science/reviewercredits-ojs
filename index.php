@@ -22,4 +22,3 @@
 require_once('ReviewerCredits.inc.php');
 
 return new ReviewerCreditsPlugin();
-
