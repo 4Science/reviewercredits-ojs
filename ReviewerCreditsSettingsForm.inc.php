@@ -24,6 +24,9 @@ class ReviewerCreditsSettingsForm extends Form {
 
 	/** @var $plugin object */
 	var $plugin;
+	
+	/** @var $passwdPlaceholder string */
+	var $passwdPlaceholder = '****************';
 
 	/**
 	* Constructor
@@ -61,10 +64,16 @@ class ReviewerCreditsSettingsForm extends Form {
 	public function initData() {
 		$contextId = $this->contextId;
 		$plugin =& $this->plugin;
+		$oldPasswd = $plugin->getSetting($contextId, 'reviewerCreditsJournalPassword');
+		if(empty($oldPasswd)){
+			$password = '';
+		}else{
+			$password = $this->passwdPlaceholder;
+		}
 
 		$this->_data = array(
 			'reviewerCreditsJournalLogin' => $plugin->getSetting($contextId, 'reviewerCreditsJournalLogin'),
-			'reviewerCreditsJournalPassword' => $plugin->getSetting($contextId, 'reviewerCreditsJournalPassword'),
+			'reviewerCreditsJournalPassword' => $password,
 		);
 	}
 
@@ -92,9 +101,13 @@ class ReviewerCreditsSettingsForm extends Form {
 	public function execute() {
 		$plugin =& $this->plugin;
 		$contextId = $this->contextId;
+		$oldPasswd = $plugin->getSetting($contextId, 'reviewerCreditsJournalPassword');
+		$newPasswd = $this->getData('reviewerCreditsJournalPassword');
 
 		$plugin->updateSetting($contextId, 'reviewerCreditsJournalLogin', $this->getData('reviewerCreditsJournalLogin'), 'string');
-		$plugin->updateSetting($contextId, 'reviewerCreditsJournalPassword', $this->getData('reviewerCreditsJournalPassword'), 'string');
+		if($newPasswd != $this->passwdPlaceholder && $newPasswd != $oldPasswd){
+			$plugin->updateSetting($contextId, 'reviewerCreditsJournalPassword', $this->getData('reviewerCreditsJournalPassword'), 'string');
+		}
 	}
 
 	/**
@@ -102,11 +115,26 @@ class ReviewerCreditsSettingsForm extends Form {
 	*/
 	public function customValidator($args){
 		$username = trim($args);
-		$password = $this->getData('reviewerCreditsJournalPassword');
-		if(empty($username) || empty($password)){
+		$plugin =& $this->plugin;
+		$contextId = $this->contextId;
+		$oldPasswd = $plugin->getSetting($contextId, 'reviewerCreditsJournalPassword');
+		$newPasswd = $this->getData('reviewerCreditsJournalPassword');
+		if(empty($username) || empty($newPasswd)){
 			$output = FALSE;
 		}else{
-			$output = $this->plugin->verifyCredentials($username, $password);
+			if($newPasswd != $this->passwdPlaceholder){
+				$password = $newPasswd;
+			}else{
+				$password = $oldPasswd;
+			}
+			$output = $plugin->verifyCredentials($username, $password);
+		}
+		if(!$output){
+			if(empty($oldPasswd)){
+				$this->_data['reviewerCreditsJournalPassword'] = '';
+			}else{
+				$this->_data['reviewerCreditsJournalPassword'] = $this->passwdPlaceholder;
+			}
 		}
 		return $output;
 	}
