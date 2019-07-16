@@ -26,11 +26,11 @@
 <table width="100%" class="data">
 	<tr valign="top">
 		<td class="label">{fieldLabel name="reviewerCreditsJournalLogin" required="true" key="plugins.generic.reviewerCredits.manager.settings.reviewerCreditsJournalLogin"}</td>
-		<td class="label">{fbvElement type="text" name="reviewerCreditsJournalLogin" id="reviewerCreditsJournalLogin" value=$reviewerCreditsJournalLogin|escape size="40" class="textField"}</td>
+		<td class="label">{fbvElement type="text" name="reviewerCreditsJournalLogin" id="reviewerCreditsJournalLogin" value=$reviewerCreditsJournalLogin size="40" class="textField"}</td>
 	</tr>
 	<tr valign="top">
 		<td class="label">{fieldLabel name="reviewerCreditsJournalPassword" required="true" key="plugins.generic.reviewerCredits.manager.settings.reviewerCreditsJournalPassword"}</td>
-		<td class="label">{fbvElement type="text" name="reviewerCreditsJournalPassword" id="reviewerCreditsJournalPassword" value=$reviewerCreditsJournalPassword|escape size="40" class="textField"}</td>
+		<td class="label">{fbvElement type="text" name="reviewerCreditsJournalPassword" id="reviewerCreditsJournalPassword" password="true" value=$reviewerCreditsJournalPassword size="40" class="textField"}</td>
 	</tr>
 </table>
 
