@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+	* plugins/generic/reviewerCredits/locale/en_US/locale.xml
+	*
+	* Copyright (c) 2015-2018 University of Pittsburgh
+	* Copyright (c) 2014-2018 Simon Fraser University
+	* Copyright (c) 2003-2018 John Willinsky
+	* Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+	*
+	* ReviewerCredits plugin localization strings
+  -->
+
+<locale name="it_IT" full_name="Italian">
+	<message key="plugins.generic.reviewerCredits.displayName">ReviewerCredits Plugin</message>
+	<message key="plugins.generic.reviewerCredits.description"><![CDATA[Plugin che permette l'integrazione con ReviewerCredits.]]></message>
+	<message key="plugins.generic.reviewerCredits.manager.reviewerCreditsSettings">Configurazioni ReviewerCredits</message>
+	<message key="plugins.generic.reviewerCredits.manager.settings.description">Collega la rivista a ReviewerCredits inserendo le credenziali. Questo permetterà di trasferire automaticamente nuove informazioni sulle rivendicazioni di revisioni.</message>
+	<message key="plugins.generic.reviewerCredits.manager.settings.reviewerCreditsJournalLogin">Username della rivista</message>
+	<message key="plugins.generic.reviewerCredits.manager.settings.reviewerCreditsJournalPassword">Password della rivista</message>
+	<message key="plugins.generic.reviewerCredits.manager.settings.rcLoginRequired">Il login con le credenziali della rivista è obbligatorio</message>
+	<message key="plugins.generic.reviewerCredits.manager.settings.rcPasswordRequired">La password della rivista è obbligatoria</message>
+	<message key="plugins.generic.reviewerCredits.manager.settings.invalid">Username o password scorretta. Verifica il tuo account su www.reviewercredits.com.</message>
+	<message key="plugins.generic.reviewerCredits.notification.success">Il resoconto di revisione è stato trasmesso con successo a ReviewerCredits, dove è stato confermato.</message>
+	<message key="plugins.generic.reviewerCredits.notification.noUser">Il resoconto di revisione non ha potuto essere trasferito a ReviewerCredits perché non non risulta un account valido associato alla mail "{$crMessage}". Puoi ancora rivendicare la tua revisione registrandoti a ReviewerCredits e caricando la tua rivendicazione di revisione per mezzo del ms ID e della mail dell'editor della rivista.</message>
+	<message key="plugins.generic.reviewerCredits.notification.failed">Il plugin ReviewerCredits ha fallito nell'inviare i dati della peer review a ReviewerCredits a causa di un errore di comunicazione</message>
+	<message key="plugins.generic.reviewerCredits.notification.failedAuth">Il plugin ReviewerCredits ha fallito nell'inviare i dati della peer review a ReviewerCredits perché le credenziali della rivista sono scorrette</message>
+	<message key="plugins.generic.reviewerCredits.form.label">Registra questa peer review su ReviewerCredits.com</message>
+	<message key="plugins.generic.reviewerCredits.form.label.description">I dati della revisione saranno trasferiti solo a {$linkOpen}ReviewerCredits{$linkClose} se possiedi un account valido. Clicca qui per {$linkSignUpOpen}accedere{$linkSignUpClose} prima di sottomettere la tua peer review.</message>
+	<message key="plugins.generic.reviewerCredits.form.consent">Accetto di trasferire i dati della mia revisione (email, cognome e nome, affiliazione, ORCID, id del manoscritto e data di completamento) a ReviewerCredits.</message>
+</locale>
