@@ -1,6 +1,9 @@
 # ReviewerCredits plugin
 
-**NOTE: Please ensure you're using the correct branch. Use the [master branch](https://github.com/4Science/reviewercredits-ojs/tree/master) for OJS 3.x**
+**Development of this plugin has moved.
+Please refer to https://www.reviewercredits.com/integrations-for-journals-and-manuscript-platforms/ to download the updated ReviewerCredits OJS Plugin
+The new repository address is: https://gitlab.com/reviewercredits/reviewercredits-ojs-plugin
+**
 
 Plugin to enable the integration with ReviewerCredits (tested with OJS 3.1.2.0)
 
